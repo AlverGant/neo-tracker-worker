@@ -1,0 +1,17 @@
+name = "neo-tracker-api"
+main = "src/index.ts"
+compatibility_date = "2024-12-18"
+
+# KV Namespace binding — after creating via:
+#   npx wrangler kv namespace create NEO_CACHE
+# paste the id below.
+[[kv_namespaces]]
+binding = "NEO_CACHE"
+id = "0453c763846c4d22872c6317e1c48a3c"
+
+# Cron Triggers: refresh every 3 hours
+[triggers]
+crons = ["0 */3 * * *"]
+
+[vars]
+ALLOWED_ORIGIN = "https://neo-radar.pages.dev,https://stellardev.dev,https://www.stellardev.dev"
